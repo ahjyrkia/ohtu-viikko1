@@ -54,6 +54,7 @@ public class AuthenticationService {
         }
         if (password.matches(regex2)) {
             count++;
-        }return count;
+        }
+        return count;
     }
 }
