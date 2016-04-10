@@ -1,3 +1,3 @@
 language: java
 after_script: 
-- echo "mvn jxr:jxr checkstyle:checkstyle -D"checkstyle.config.location=my_checks.xml""
+- echo mvn jxr:jxr checkstyle:checkstyle -D"checkstyle.config.location=my_checks.xml"
