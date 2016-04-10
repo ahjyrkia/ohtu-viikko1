@@ -30,36 +30,31 @@ public class AuthenticationService {
         if (userDao.findByName(username) != null) {
             return false;
         }
-
         if (invalid(username, password)) {
             return false;
         }
-
         userDao.add(new User(username, password));
-
         return true;
     }
 
     private boolean invalid(String username, String password) {
+        int count = 0;
         if (!username.matches("^([a-zA-Z]).{3,}$")) {
             return true;
         }
+        count += passregexAuth(password, ".*[a-z].*", ".*[!”#$%&’()*+,./;:=?_@>-].*");
+        count += passregexAuth(password, ".*[0-9].*", ".{8,}");
+        return count < 3;
+    }
+
+    private int passregexAuth(String password, String regex, String regex2) {
         int count = 0;
-        if (password.matches(".*[a-z].*")) {
+        if (password.matches(regex)) {
             count++;
         }
-        if (password.matches(".*[!”#$%&’()*+,./;:=?_@>-].*")) {
+        if (password.matches(regex2)) {
             count++;
         }
-        if (password.matches(".*[0-9].*")) {
-            count++;
-        }
-        if (password.length() >= 8) {
-            count++;
-        }
-        if (count >= 3) {
-            return false;
-        }
-        return true;
+        return count;
     }
 }
