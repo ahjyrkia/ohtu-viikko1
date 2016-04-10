@@ -1,2 +1,2 @@
 language: java
-script: mvn jxr:jxr checkstyle:checkstyle -D"checkstyle.config.location=my_checks.xml"
+script: mvn checkstyle:check -D"checkstyle.config.location=my_checks.xml"

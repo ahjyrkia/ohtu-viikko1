@@ -15,5 +15,6 @@
 <file name="/home/ahjyrkia/ohtu2016vko2/viikko3/LoginEasyBv1/src/main/java/ohtu/data_access/InMemoryUserDao.java">
 </file>
 <file name="/home/ahjyrkia/ohtu2016vko2/viikko3/LoginEasyBv1/src/main/java/ohtu/services/AuthenticationService.java">
+<error line="57" column="9" severity="error" message="&apos;}&apos; at column 9 should be alone on a line." source="com.puppycrawl.tools.checkstyle.checks.blocks.RightCurlyCheck"/>
 </file>
 </checkstyle>
