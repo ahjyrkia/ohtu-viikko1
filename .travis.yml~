@@ -1,1 +1,5 @@
 language: java
+<<<<<<< HEAD
+=======
+script: mvn jxr:jxr checkstyle:checkstyle -D"checkstyle.config.location=my_checks.xml"
+>>>>>>> 4a99e8b026cc77c9cd2812c9ad8c7f9ba9a4ae12
